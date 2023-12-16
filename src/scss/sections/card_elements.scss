@@ -18,11 +18,43 @@
         .card-product_item {
             max-width: 200px;
 
+            .card-product_pop-up{
+                display: block;
+                width: 100%;
+                position: relative; 
+
+                .scale-product {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 20px;
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 250px;
+                    transition: .3s;
+                    cursor: pointer;
+
+                    .text-scale_product {
+                        color: $white;
+                    }
+                }
+            }
+
             .card-product_image img {
                 width:  200px;
                 height: 250px;
                 border-radius: 20px;
             }
+
+            .card-product_pop-up:hover .scale-product{
+                background: rgba(236, 231, 231, 0.5);
+                opacity: 1;
+              }
 
             .card-product_information {
                 padding-top: 10px;
@@ -36,6 +68,11 @@
                 }
 
                 .card-product_description {
+                    -webkit-line-clamp: 2; /* Число отображаемых строк */
+                    display: -webkit-box; /* Включаем флексбоксы */
+                    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                    overflow: hidden;
+                    text-align: justify;
                     font-size: 12px;
                 }
 
@@ -47,16 +84,17 @@
                 .btn-add_basket {
                     width: 100px;
                     padding: 5px;
-                    background-color: #BC3D96;
+                    background-color: $btnbackcolor;
                     border: none;
                     border-radius: 5px;
                     color: $white;
                     font-size: 14px;
-
                 }
-            }       
 
+                .btn-add_basket:hover {
+                    background-color: $hovercolor;
+                }
+            } 
         }
     }
-
 }

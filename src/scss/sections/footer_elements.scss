@@ -10,7 +10,7 @@
             justify-content: space-between;
             gap: 20px;
 
-            .foooter-about_item {
+            .footer-about_item {
                 
                 .footer-about_title {
                     padding: 20px 0;
@@ -22,12 +22,18 @@
                 .footer-list {
                     display: flex;
                     flex-direction: column;
+                    justify-content: left;
                     gap: 10px;
 
                     .footer-list_item a{
                         color: $white;
                         font-size: 14px;
                     }
+
+                    .footer-list_item a:hover {
+                        color: $hovercolor;
+                    }
+    
                 }
 
                 .footer-app {
