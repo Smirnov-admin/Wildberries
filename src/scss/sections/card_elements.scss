@@ -17,10 +17,11 @@
 
         .card-product_item {
             max-width: 200px;
-            height: 500px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 10px;
 
 
             .card-product_pop-up{
@@ -62,17 +63,18 @@
               }
 
             .card-product_information {
-                padding-top: 10px;
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
 
                 .card-product_title {
                     font-size: 14px;
-                    font-family: 'Kalnia', sans-serif;
+                    font-family: 'Noto Sans Japanese', sans-serif;
+                    font-weight: 600;
                     -webkit-line-clamp: 2; /* Число отображаемых строк */
                     display: -webkit-box; /* Включаем флексбоксы */
                     -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                    vertical-align: top;
                     overflow: hidden;
                     text-align: justify;
                 }

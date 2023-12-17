@@ -616,15 +616,23 @@ const runWildberriesApplication = async ()=>{
     }
     renderProducts(products);
     const modalWindow = document.getElementById("modalBasket");
-    console.log(modalWindow);
     const btnOpen = document.getElementById("OpenModal");
-    console.log(btnOpen);
+    const findImageZoom = document.querySelector(".zoom-element_image img");
+    const zoomImage = document.querySelector(".modal-element_image");
     btnOpen.onclick = function() {
         modalWindow.style.display = "block";
     };
-    window.onclick = function(event) {
-        if (event.target == modalWindow) modalWindow.style.display = "none";
+    zoomImage.onclick = function() {
+        zoomImage.style.display = "none";
     };
+    cardProductsList.addEventListener("click", (event)=>{
+        if (event.target.classList.contains("scale-product")) {
+            const findCard = event.target.closest(".card-product_item");
+            const findImage = findCard.querySelector(".card-product_image img");
+            zoomImage.style.display = "block";
+            findImageZoom.src = findImage.src;
+        }
+    });
 };
 runWildberriesApplication();
 
