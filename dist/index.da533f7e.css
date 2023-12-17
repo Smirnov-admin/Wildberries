@@ -61,11 +61,115 @@
   font-size: 14px;
 }
 
-.header_elements .header-content .header-basket_item img {
+.header_elements .header-content .header-basket_item button {
+  cursor: pointer;
+  opacity: 0, 1;
+  background-color: #7d256f;
+  background-image: url("basket.21de7974.png");
+  background-size: cover;
+  border: none;
   width: 40px;
   height: 40px;
   margin: 0 auto;
   display: block;
+}
+
+.modal-element {
+  z-index: 1;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.modal-element .modal-window_information .basket_information {
+  background: #f8f8f8;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  margin: 20px 0;
+}
+
+.modal-element .modal-window_information .basket_information .basket_information_title {
+  color: #7d256f;
+  padding: 20px 0 0 15px;
+}
+
+.modal-element .modal-window_information .basket_information .basket_information_summ {
+  padding: 20px 0 0 15px;
+}
+
+.modal-element .modal-window_information .delivery-method {
+  background: #f8f8f8;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  margin: 20px 0;
+}
+
+.modal-element .modal-window_information .delivery-method .delivery-method_title {
+  color: #7d256f;
+  padding: 20px 0 0 15px;
+}
+
+.modal-element .modal-window_information .delivery-method .delivery-method_description {
+  color: #7d256f;
+  padding: 30px 0 0 15px;
+  font-weight: 500;
+}
+
+.modal-element .modal-window_information .person-information {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 20px 0;
+  display: flex;
+}
+
+.modal-element .modal-window_information .person-information .payment-method {
+  background: #f8f8f8;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+}
+
+.modal-element .modal-window_information .person-information .payment-method .payment-method_title {
+  color: #7d256f;
+  padding: 20px 0 0 15px;
+}
+
+.modal-element .modal-window_information .person-information .payment-method .payment-method_description {
+  padding: 30px 0 0 15px;
+}
+
+.modal-element .modal-window_information .person-information .payment-method .payment-method_description .selected-text {
+  color: #7d256f;
+  font-weight: 500;
+}
+
+.modal-element .modal-window_information .person-information .my-details {
+  background: #f8f8f8;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+}
+
+.modal-element .modal-window_information .person-information .my-details .my-details_title {
+  color: #7d256f;
+  padding: 20px 0 0 15px;
+}
+
+.modal-element .modal-window_information .person-information .my-details .my-details_description {
+  padding: 30px 0 0 15px;
+}
+
+.modal-element .modal-window_information .person-information .my-details .my-details_description .selected-text {
+  color: #7d256f;
+  font-weight: 500;
 }
 
 .banner_elements {
@@ -123,7 +227,11 @@
 }
 
 .card_products .card-products_list .card-product_item {
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 200px;
+  height: 500px;
+  display: flex;
 }
 
 .card_products .card-products_list .card-product_item .card-product_pop-up {
@@ -172,8 +280,17 @@
 }
 
 .card_products .card-products_list .card-product_item .card-product_information .card-product_title {
+  -webkit-line-clamp: 2;
+  text-align: justify;
+  -webkit-box-orient: vertical;
   font-family: Kalnia, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.card_products .card-products_list .card-product_item .card-product_information .card-product_category {
+  font-size: 12px;
 }
 
 .card_products .card-products_list .card-product_item .card-product_information .card-product_description {

@@ -10,6 +10,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="/src/scripts/banner.js" defer></script>
+    <script type="module" src="/src/scripts/index.js" defer></script>
 
     <title>Wildberries — Интернет-магазин модной одежды и обуви</title>
 
@@ -24,14 +25,15 @@
                 </div>
 
                 <div class="header-search_item">
-                    <input type="text" placeholder="Найти товары">
+                    <input type="text" placeholder="Найти товары" >
                     <img src="/src/img/search.png" alt="Search">
                 </div>
-
-                <div class="header-basket_item">
-                    <img src="/src/img/basket.png" alt="Basket">
-                    <p class="headet-basket_text">Корзина</p>
-                </div>
+                <!-- <a href="#" > -->
+                    <div class="header-basket_item">
+                        <button class="header-basket_item" id="OpenModal"></button>
+                        <p class="headet-basket_text">Корзина</p>
+                    </div>
+                <!-- </a> -->
             </div>
         </div>
     </div>
@@ -61,6 +63,116 @@
         </div>
     </div>
 
+    <!-- MODAL WINDOW -->
+    <div class="modal-element" id="modalBasket">
+    <!-- HEADER -->
+    <div class="header_elements">
+        <div class="wrapper">
+            <div class="header-content">
+                <div class="header-logo_item">
+                    <img src="/src/img/logo.png" alt="Logo">
+                </div>
+
+                <div class="header-search_item">
+                    <input type="text" placeholder="Найти товары" >
+                    <img src="/src/img/search.png" alt="Search">
+                </div>
+                <!-- <a href="#" > -->
+                    <div class="header-basket_item">
+                        <button class="header-basket_item" id="OpenModal"></button>
+                        <p class="headet-basket_text">Корзина</p>
+                    </div>
+                <!-- </a> -->
+            </div>
+        </div>
+    
+    </div> 
+        <div class="modal-window-content">
+            <div class="wrapper">
+                <div class="modal-window_information">
+                    <div class="basket_information">
+                        <h3 class="basket_information_title">Корзина</h3>
+                        <div class="basket_information_list_product">
+                            <div class="basket_information_product">
+                                
+                            </div>
+                        </div>
+                        <p class="basket_information_summ">р.</p>
+                    </div>
+                    <div class="delivery-method">
+                        <h3 class="delivery-method_title">Способ доставки</h3>
+                        <p class="delivery-method_description">Выбрать адрес доставки</p>
+                    </div>
+                    <div class="person-information">
+                        <div class="payment-method">
+                            <h3 class="payment-method_title">Способ оплаты</h3>
+                            <p class="payment-method_description"><span class="selected-text">Войти или зарегистрироваться,</span> чтобы выбрать способ оплаты</p>
+                        </div>
+                        <div class="my-details">
+                            <h3 class="my-details_title">Мои данные</h3>
+                            <p class="my-details_description"><span class="selected-text">Войти или зарегистрироваться,</span> чтобы оформить заказ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- FOOTER -->
+    <div class="footer_elements">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-about_item">
+                        <h3 class="footer-about_title">Покупателям</h3>
+                        <ul class="footer-list">
+                            <li class="footer-list_item"><a href="#">Способы оплаты</a></li>
+                            <li class="footer-list_item"><a href="#">Возврат товара</a></li>
+                            <li class="footer-list_item"><a href="#">Правила продажи товаров</a></li>
+                            <li class="footer-list_item"><a href="#">Доставка</a></li>
+                            <li class="footer-list_item"><a href="#">Возврат денежных средств</a></li>
+                            <li class="footer-list_item"><a href="#">Правила пользования торговой площадкой</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-about_item">
+                        <h3 class="footer-about_title">Компания</h3>
+                        <ul class="footer-list">
+                            <li class="footer-list_item"><a href="#">О нас</a></li>
+                            <li class="footer-list_item"><a href="#">Контакты</a></li>
+                            <li class="footer-list_item"><a href="#">Вакансии</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-about_item">
+                        <h3 class="footer-about_title">Мы в соцсетях</h3>
+                        <ul class="footer-list">
+                            <li class="footer-list_item"><a href="#">Вконтакте</a></li>
+                            <li class="footer-list_item"><a href="#">Одноклассники</a></li>
+                            <li class="footer-list_item"><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-about_item">
+                        <h3 class="footer-about_title">Приложение Wildberries</h3>
+                        <div class="footer-app">
+                            <img src="/src/img/qr.png" alt="qr code">
+                            <p class="footer-qr_text">Наведите камеру, чтобы скачать приложение</p>
+                            <div class="footer-app_list">
+                                <img src="/src/img/AppStore.png" alt="AppStore">
+                                <img src="/src/img/PlayMarket.png" alt="PlayMarket">
+                                <img src="/src/img/HuaweiStore.png" alt="Huawei Store">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="footer-copyright">
+                    <p class="copyright-text">2004—2023 © Wildberries — модный интернет-магазин одежды, обуви и аксессуаров. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+    </div>
+
     <!-- CARDS -->
     <div class="card_products">
         <div class="wrapper">
@@ -68,90 +180,6 @@
                 <h1 class="card-list_title">Хиты продаж</h1>
             </div>
             <div class="card-products_list">
-                <div class="card-product_item">
-                    <a href="#1" class="card-product_pop-up">
-                        <div class="card-product_image">
-                            <img src="/src/img/product.png" alt="">
-                        </div>
-                        <div class="scale-product">
-                            <p class="text-scale_product">Увеличить картинку</p>
-                        </div>
-                    </a>
-                    <div class="card-product_information">
-                        <h3 class="card-product_title">Новогодний набор</h3>
-                        <p class="card-product_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, in itaque molestias consequatur amet soluta eos excepturi vel velit ipsum </p>
-                        <p class="card-product_price">50 р.</p>
-                        <button class="btn-add_basket">В корзину</buttonВ>
-                    </div>
-                </div>
-
-                <div class="card-product_item">
-                    <a href="#1" class="card-product_pop-up">
-                        <div class="card-product_image">
-                            <img src="/src/img/product.png" alt="">
-                        </div>
-                        <div class="scale-product">
-                            <p class="text-scale_product">Увеличить картинку</p>
-                        </div>
-                    </a>
-                    <div class="card-product_information">
-                        <h3 class="card-product_title">Новогодний набор</h3>
-                        <p class="card-product_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, in itaque molestias consequatur amet soluta eos excepturi vel velit ipsum </p>
-                        <p class="card-product_price">50 р.</p>
-                        <button class="btn-add_basket">В корзину</buttonВ>
-                    </div>
-                </div>
-
-                <div class="card-product_item">
-                    <a href="#1" class="card-product_pop-up">
-                        <div class="card-product_image">
-                            <img src="/src/img/product.png" alt="">
-                        </div>
-                        <div class="scale-product">
-                            <p class="text-scale_product">Увеличить картинку</p>
-                        </div>
-                    </a>
-                    <div class="card-product_information">
-                        <h3 class="card-product_title">Новогодний набор</h3>
-                        <p class="card-product_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, in itaque molestias consequatur amet soluta eos excepturi vel velit ipsum </p>
-                        <p class="card-product_price">50 р.</p>
-                        <button class="btn-add_basket">В корзину</buttonВ>
-                    </div>
-                </div>
-
-                <div class="card-product_item">
-                    <a href="#1" class="card-product_pop-up">
-                        <div class="card-product_image">
-                            <img src="/src/img/product.png" alt="">
-                        </div>
-                        <div class="scale-product">
-                            <p class="text-scale_product">Увеличить картинку</p>
-                        </div>
-                    </a>
-                    <div class="card-product_information">
-                        <h3 class="card-product_title">Новогодний набор</h3>
-                        <p class="card-product_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, in itaque molestias consequatur amet soluta eos excepturi vel velit ipsum </p>
-                        <p class="card-product_price">50 р.</p>
-                        <button class="btn-add_basket">В корзину</buttonВ>
-                    </div>
-                </div>
-
-                <div class="card-product_item">
-                    <a href="#1" class="card-product_pop-up">
-                        <div class="card-product_image">
-                            <img src="/src/img/product.png" alt="">
-                        </div>
-                        <div class="scale-product">
-                            <p class="text-scale_product">Увеличить картинку</p>
-                        </div>
-                    </a>
-                    <div class="card-product_information">
-                        <h3 class="card-product_title">Новогодний набор</h3>
-                        <p class="card-product_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, in itaque molestias consequatur amet soluta eos excepturi vel velit ipsum </p>
-                        <p class="card-product_price">50 р.</p>
-                        <button class="btn-add_basket">В корзину</buttonВ>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -211,6 +239,6 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>

@@ -17,6 +17,11 @@
 
         .card-product_item {
             max-width: 200px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
 
             .card-product_pop-up{
                 display: block;
@@ -63,8 +68,17 @@
                 gap: 15px;
 
                 .card-product_title {
-                    font-size: 16px;
+                    font-size: 14px;
                     font-family: 'Kalnia', sans-serif;
+                    -webkit-line-clamp: 2; /* Число отображаемых строк */
+                    display: -webkit-box; /* Включаем флексбоксы */
+                    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                    overflow: hidden;
+                    text-align: justify;
+                }
+
+                .card-product_category {
+                    font-size: 12px;
                 }
 
                 .card-product_description {
