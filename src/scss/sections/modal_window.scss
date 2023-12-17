@@ -16,16 +16,100 @@
         border-radius: 15px;
         background: $backinformationmodal;
         width: 100%;
-        height: 150px;
 
         .basket_information_title {
           padding: 20px 0 0 15px;
           color: $purpleblue;
         }
 
-        .basket_information_summ{
-          padding: 20px 0 0 15px;
+        .basket_information_list_product  {
+        
+          .card-product_item {
+            padding: 20px 0 0 15px;
+            width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 15px;
+        
+              .card-product_image img {
+                  width:  100px;
+                  height: 120px;
+              }
+        
+              .card-product_information {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+        
+                  .card-product_title {
+                      font-size: 14px;
+                      font-family: 'Noto Sans Japanese', sans-serif;
+                      font-weight: 600;
+                      -webkit-line-clamp: 2; /* Число отображаемых строк */
+                      display: -webkit-box; /* Включаем флексбоксы */
+                      -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                      vertical-align: top;
+                      overflow: hidden;
+                      text-align: justify;
+                      width: 400px;
+                  }
+        
+                  .card-product_category {
+                      font-size: 12px;
+                  }
+        
+                  .card-product_description {
+                      -webkit-line-clamp: 2; /* Число отображаемых строк */
+                      display: -webkit-box; /* Включаем флексбоксы */
+                      -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                      overflow: hidden;
+                      text-align: justify;
+                      font-size: 12px;
+                      width: 800px;
+                  }
+        
+                  .card-product_informationPrice {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+
+                    .card-product_price {
+                        font-family: 'Noto Serif', sans-serif;
+                        font-weight: 700;
+                    }
+
+                    .card-product_currency {
+                        font-family: 'Noto Serif', sans-serif;
+                        font-weight: 700;
+                    }
+
+                }
+              } 
+          }
         }
+
+        .basket_information_totalAmount {
+          display: flex;
+          padding: 20px 0 20px 15px;
+          gap: 10px;
+
+
+          .basket_information_summ{
+            font-size: 24px;
+          }
+
+          .basket_information_totalAmountProduct {
+            font-size: 24px;
+            padding: 0 0 0 15px;
+          }
+
+          .basket_information_productСurrency {
+            font-size: 24px;
+          }
+
+        }
+
       }
 
       .delivery-method {
@@ -42,8 +126,11 @@
 
         .delivery-method_description {
           padding: 30px 0 0 15px;
-          color: $purpleblue;
           font-weight: 500;
+        }
+        
+        .delivery-method_description a{
+          color: $purpleblue;
         }  
       }
 
@@ -72,6 +159,10 @@
               color: $purpleblue;
               font-weight: 500;
             }
+          }
+
+          .payment-method_description a {
+            color: #000;
           }    
         }
 
@@ -94,22 +185,12 @@
               color: $purpleblue;
               font-weight: 500;
             }
-          }    
+          }  
+
+          .my-details_description a {
+            color: #000;
+          }     
         }
       }
     }
 }
-
-// .close {
-//     color: #aaaaaa;
-//     float: right;
-//     font-size: 28px;
-//     font-weight: bold;
-//   }
-  
-//   .close:hover,
-//   .close:focus {
-//     color: #000;
-//     text-decoration: none;
-//     cursor: pointer;
-//   }

@@ -92,9 +92,21 @@
                     font-size: 12px;
                 }
 
-                .card-product_price {
-                    font-family: 'Noto Serif', sans-serif;
-                    font-weight: 700;
+                .card-product_informationPrice {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+
+                    .card-product_price {
+                        font-family: 'Noto Serif', sans-serif;
+                        font-weight: 700;
+                    }
+
+                    .card-product_currency {
+                        font-family: 'Noto Serif', sans-serif;
+                        font-weight: 700;
+                    }
+
                 }
 
                 .btn-add_basket {

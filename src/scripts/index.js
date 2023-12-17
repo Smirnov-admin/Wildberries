@@ -28,7 +28,9 @@ const getWildberriesData = async () => {
         const cardProductTitle = elementsCard.createH3('card-product_title', titleCard);
         const cardProductCategory = elementsCard.createH3('card-product_category', `Категория: ${categoryCard}`);
         const cardProductDescription = elementsCard.createP('card-product_description', descriptionCard)
-        const cardroductPrice = elementsCard.createP('card-product_price', `${priceProduct} р.`);
+        const cardProductInformationPrice = elementsCard.createDiv('card-product_informationPrice')
+        const cardroductPrice = elementsCard.createP('card-product_price', priceProduct);
+        const cardroductCurrency = elementsCard.createP('card-product_currency', ' p.');
         const btnAddBasket = elementsCard.createButtons('btn-add_basket', 'В корзину')
 
         cardProductsList.append(cardProductItem);
@@ -36,7 +38,9 @@ const getWildberriesData = async () => {
         cardProductPopUp.append(cardProductImage, scaleProduct);
         cardProductImage.append(ProductImage);
         scaleProduct.append(textScaleProduct);
-        cardProductInformation.append(cardProductTitle, cardProductCategory, cardProductDescription, cardroductPrice, btnAddBasket);
+        cardProductInformationPrice.append(cardroductPrice, cardroductCurrency)
+        cardProductInformation.append(cardProductTitle, cardProductCategory, cardProductDescription, cardProductInformationPrice, btnAddBasket);
+    
     }
     
     function renderProducts(products) {
@@ -47,30 +51,6 @@ const getWildberriesData = async () => {
     }
 
     renderProducts(products)
-  
-    const modalWindow = document.getElementById('modalBasket')
-    const btnOpen = document.getElementById('OpenModal')
-
-
-    const findImageZoom = document.querySelector('.zoom-element_image img')
-    const zoomImage = document.querySelector('.modal-element_image')
-
-    btnOpen.onclick = function() {
-        modalWindow.style.display = "block";
-    }
-
-    cardProductsList.addEventListener('click', (event) => {
-        if(event.target.classList.contains('scale-product')) {
-            const findCard = event.target.closest('.card-product_item')
-            const findImage = findCard.querySelector('.card-product_image img')
-            zoomImage.style.display = 'block'
-            findImageZoom.src = findImage.src
-        }
-    })
-
-    zoomImage.onclick = function() {
-        zoomImage.style.display = 'none';
-    }
 
     const searchProduct = (() => {
         const textProduct = document.getElementById("searchProduct");
@@ -87,12 +67,70 @@ const getWildberriesData = async () => {
     
             filterProduct.forEach((product) => {
                 const { id, image, title, category, description, price} = product;
-            createCardsProduct(id, image, title, category, description, price);
+                createCardsProduct(id, image, title, category, description, price);
             });
         });
     })
 
     searchProduct()
+  
+    const modalWindow = document.getElementById('modalBasket');
+    const btnOpen = document.getElementById('OpenModal');
+    const btnHome = document.getElementById("home");
+    console.log(btnHome)
+
+
+
+    btnOpen.onclick = function() {
+        modalWindow.style.display = "block";
+    }
+
+    btnHome.onclick = function() {
+        modalWindow.style.display = "none";
+        console.log(true)
+    }
+
+
+    const findImageZoom = document.querySelector('.zoom-element_image img')
+    const zoomImage = document.querySelector('.modal-element_image')
+
+    cardProductsList.addEventListener('click', (event) => {
+        if(event.target.classList.contains('scale-product')) {
+            const findCard = event.target.closest('.card-product_item')
+            const findImage = findCard.querySelector('.card-product_image img')
+            zoomImage.style.display = 'block'
+            findImageZoom.src = findImage.src
+        }
+
+        if(event.target.classList.contains('btn-add_basket')){
+            const findCard = event.target.closest('.card-product_item');
+            findCard.classList.add('check');
+        }
+
+    })
+
+    const headerBasket = document.querySelector('.header-basket_item');
+    headerBasket.addEventListener('click', (event) => {
+        if(event.target.classList.contains('header-basket_item')){
+            const findAllProductInBasket = document.querySelectorAll('.check')
+            const listProductInBasket = document.querySelector('.basket_information_product')
+            const totalAmounttext = document.querySelector('.basket_information_totalAmountProduct')
+            let totalAmount = 0;
+            findAllProductInBasket.forEach((product) => {
+                const productClone = product.cloneNode(true);
+                productClone.querySelector('.btn-add_basket').remove();
+                productClone.querySelector('.scale-product').remove();
+                totalAmount += +productClone.querySelector('.card-product_price').textContent
+                listProductInBasket.append(productClone)
+            })
+            totalAmounttext.textContent = totalAmount;
+        }
+    })
+
+    zoomImage.onclick = function() {
+        zoomImage.style.display = 'none';
+    }
+
 
 }
   runWildberriesApplication()

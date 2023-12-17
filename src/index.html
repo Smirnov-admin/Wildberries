@@ -28,12 +28,10 @@
                     <input type="text" placeholder="Найти товары" id = "searchProduct">
                     <img src="/src/img/search.png" alt="Search">
                 </div>
-                <!-- <a href="#" > -->
                     <div class="header-basket_item">
                         <button class="header-basket_item" id="OpenModal"></button>
                         <p class="headet-basket_text">Корзина</p>
                     </div>
-                <!-- </a> -->
             </div>
         </div>
     </div>
@@ -63,31 +61,30 @@
         </div>
     </div>
 
-    <!-- MODAL WINDOW -->
+    <!-- MODAL WINDOW BASKET -->
     <div class="modal-element" id="modalBasket">
     <!-- HEADER -->
     <div class="header_elements">
         <div class="wrapper">
             <div class="header-content">
-                <div class="header-logo_item">
+                <div class="header-logo_item" id="home">
                     <img src="/src/img/logo.png" alt="Logo">
                 </div>
-
                 <div class="header-search_item">
                     <input type="text" placeholder="Найти товары" >
                     <img src="/src/img/search.png" alt="Search">
                 </div>
-                <!-- <a href="#" > -->
                     <div class="header-basket_item">
                         <button class="header-basket_item" id="OpenModal"></button>
                         <p class="headet-basket_text">Корзина</p>
                     </div>
-                <!-- </a> -->
             </div>
         </div>
     
     </div> 
-        <div class="modal-window-content">
+
+    <!-- PRODUCT BASKET -->
+    <div class="modal-window-content">
             <div class="wrapper">
                 <div class="modal-window_information">
                     <div class="basket_information">
@@ -97,25 +94,30 @@
 
                             </div>
                         </div>
-                        <p class="basket_information_summ">р.</p>
+                        <div class="basket_information_totalAmount">
+                            <p class="basket_information_summ">Сумма к оплате:</p>
+                            <p class="basket_information_totalAmountProduct"></p>
+                            <p class="basket_information_productСurrency"> р.</p>
+                        </div>
                     </div>
                     <div class="delivery-method">
                         <h3 class="delivery-method_title">Способ доставки</h3>
-                        <p class="delivery-method_description">Выбрать адрес доставки</p>
+                        <p class="delivery-method_description"><a href="">Выбрать адрес доставки</a></p>
                     </div>
                     <div class="person-information">
                         <div class="payment-method">
                             <h3 class="payment-method_title">Способ оплаты</h3>
-                            <p class="payment-method_description"><span class="selected-text">Войти или зарегистрироваться,</span> чтобы выбрать способ оплаты</p>
+                            <p class="payment-method_description"><a href=""><span class="selected-text">Войти или зарегистрироваться,</span> чтобы выбрать способ оплаты</a></p>
                         </div>
                         <div class="my-details">
                             <h3 class="my-details_title">Мои данные</h3>
-                            <p class="my-details_description"><span class="selected-text">Войти или зарегистрироваться,</span> чтобы оформить заказ</p>
+                            <p class="my-details_description"><a href=""></a><span class="selected-text">Войти или зарегистрироваться,</span> чтобы оформить заказ</a></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
+
     <!-- FOOTER -->
     <div class="footer_elements">
         <div class="wrapper">
@@ -241,7 +243,6 @@
     </div>
 
     <!-- MODAL WINDOW IMAGE-->
-
     <div class="modal-element_image">
         <div class="wrapper">
             <div class="zoom-element_image">
