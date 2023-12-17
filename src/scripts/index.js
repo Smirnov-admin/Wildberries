@@ -59,12 +59,6 @@ const getWildberriesData = async () => {
         modalWindow.style.display = "block";
     }
 
-    zoomImage.onclick = function() {
-        zoomImage.style.display = 'none';
-    }
-
-    
-
     cardProductsList.addEventListener('click', (event) => {
         if(event.target.classList.contains('scale-product')) {
             const findCard = event.target.closest('.card-product_item')
@@ -74,7 +68,31 @@ const getWildberriesData = async () => {
         }
     })
 
+    zoomImage.onclick = function() {
+        zoomImage.style.display = 'none';
+    }
+
+    const searchProduct = (() => {
+        const textProduct = document.getElementById("searchProduct");
+        console.log(searchProduct)
+        textProduct.addEventListener("input", () => {
+
+            const searchProduct = textProduct.value.toLowerCase().trim();
+    
+            const filterProduct = products.filter((product) =>
+              product.title.toLowerCase().includes(searchProduct)
+            );
+    
+            cardProductsList.innerHTML = "";
+    
+            filterProduct.forEach((product) => {
+                const { id, image, title, category, description, price} = product;
+            createCardsProduct(id, image, title, category, description, price);
+            });
+        });
+    })
+
+    searchProduct()
 
 }
-  
   runWildberriesApplication()
